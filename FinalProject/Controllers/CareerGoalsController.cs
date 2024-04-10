@@ -21,14 +21,14 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        // GET: api/CareerGoals
+     
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CareerGoals>>> GetCareerGoals()
         {
             return await _context.CareerGoals.ToListAsync();
         }
 
-        // GET: api/CareerGoals/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<CareerGoals>> GetCareerGoals(int id)
         {
@@ -42,8 +42,7 @@ namespace FinalProject.Controllers
             return careerGoals;
         }
 
-        // PUT: api/CareerGoals/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+     
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCareerGoals(int id, CareerGoals careerGoals)
         {
@@ -73,8 +72,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        // POST: api/CareerGoals
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+       
         [HttpPost]
         public async Task<ActionResult<CareerGoals>> PostCareerGoals(CareerGoals careerGoals)
         {
@@ -84,7 +82,7 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetCareerGoals", new { id = careerGoals.Id }, careerGoals);
         }
 
-        // DELETE: api/CareerGoals/5
+       
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCareerGoals(int id)
         {
