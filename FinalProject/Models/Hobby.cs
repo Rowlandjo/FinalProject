@@ -3,9 +3,9 @@
     public class Hobby
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
-        public int DifficultyLevel { get; set; }
+        public string HobbyName { get; set; }
+        public string TypeOfHobby { get; set; }
+        public string CostOfHobby { get; set; }
+        public int TimeWhenHobbyPerformex { get; set; }
     }
 }
