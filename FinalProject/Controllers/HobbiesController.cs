@@ -28,7 +28,7 @@ namespace FinalProject.Controllers
             return await _context.Hobby.ToListAsync();
         }
 
-        // GET: api/Hobbies/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Hobby>> GetHobby(int id)
         {
@@ -42,8 +42,7 @@ namespace FinalProject.Controllers
             return hobby;
         }
 
-        // PUT: api/Hobbies/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHobby(int id, Hobby hobby)
         {
@@ -73,8 +72,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        // POST: api/Hobbies
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<Hobby>> PostHobby(Hobby hobby)
         {
@@ -84,7 +82,7 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetHobby", new { id = hobby.Id }, hobby);
         }
 
-        // DELETE: api/Hobbies/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHobby(int id)
         {
