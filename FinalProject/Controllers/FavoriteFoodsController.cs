@@ -21,14 +21,14 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        // GET: api/FavoriteFoods
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FavoriteFood>>> GetFavoriteFood()
          {
             return await _context.FavoriteFood.ToListAsync();
         }
 
-        // GET: api/FavoriteFoods/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<FavoriteFood>> GetFavoriteFood(int id)
         {
@@ -42,8 +42,7 @@ namespace FinalProject.Controllers
             return favoriteFood;
         }
 
-        // PUT: api/FavoriteFoods/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFavoriteFood(int id, FavoriteFood favoriteFood)
         {
@@ -73,8 +72,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        // POST: api/FavoriteFoods
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<FavoriteFood>> PostFavoriteFood(FavoriteFood favoriteFood)
         {
@@ -84,7 +82,7 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetFavoriteFood", new { id = favoriteFood.Id }, favoriteFood);
         }
 
-        // DELETE: api/FavoriteFoods/5
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFavoriteFood(int id)
         {
