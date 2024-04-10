@@ -21,14 +21,13 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        // GET: api/TeamMember_
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TeamMember_>>> GetTeamMember_()
         {
             return await _context.TeamMember_.ToListAsync();
         }
 
-        // GET: api/TeamMember_/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TeamMember_>> GetTeamMember_(int id)
         {
@@ -42,8 +41,7 @@ namespace FinalProject.Controllers
             return teamMember_;
         }
 
-        // PUT: api/TeamMember_/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTeamMember_(int id, TeamMember_ teamMember_)
         {
@@ -73,8 +71,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        // POST: api/TeamMember_
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<TeamMember_>> PostTeamMember_(TeamMember_ teamMember_)
         {
@@ -84,7 +81,6 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetTeamMember_", new { id = teamMember_.Id }, teamMember_);
         }
 
-        // DELETE: api/TeamMember_/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeamMember_(int id)
         {
