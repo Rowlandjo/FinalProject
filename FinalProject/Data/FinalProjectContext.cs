@@ -14,6 +14,11 @@ namespace FinalProject.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<TeamMember_>().HasData(
+                new TeamMember { Id = 1, Fullname = "Natalie Plunkett", BirthDate = "January 31", CollegeProgram = "Information Technology", YearInProgram = "Senior" }
+
         public DbSet<FinalProject.Models.TeamMember_> TeamMember_ { get; set; } = default!;
         public DbSet<FinalProject.Models.Hobby> Hobby { get; set; } = default!;
         public DbSet<FinalProject.Models.CareerGoals> CareerGoals { get; set; } = default!;
