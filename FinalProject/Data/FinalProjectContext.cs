@@ -18,6 +18,8 @@ namespace FinalProject.Data
         {
             builder.Entity<TeamMember_>().HasData(
                 new TeamMember { Id = 1, Fullname = "Natalie Plunkett", BirthDate = "January 31", CollegeProgram = "Information Technology", YearInProgram = "Senior" }
+               new TeamMember { Id = 1, Fullname = "Josh Rowland", BirthDate = "April 7", CollegeProgram = "Information Technology", YearInProgram = "Junior" }
+ 
 
         public DbSet<FinalProject.Models.TeamMember_> TeamMember_ { get; set; } = default!;
         public DbSet<FinalProject.Models.Hobby> Hobby { get; set; } = default!;
