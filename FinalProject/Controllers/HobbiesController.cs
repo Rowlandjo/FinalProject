@@ -21,28 +21,27 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        // GET: api/Hobbies
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Hobby>>> GetHobby()
+             [HttpGet("{id:int?}")]
+        public async Task<ActionResult<IEnumerable<Hobby>>> GetHobby(int? id)
         {
-            return await _context.Hobby.ToListAsync();
-        }
-
-        
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Hobby>> GetHobby(int id)
-        {
-            var hobby = await _context.Hobby.FindAsync(id);
-
-            if (hobby == null)
+            if (id == null || id == 0)
             {
-                return NotFound();
+                return await _context.Hobby.Take(5).ToListAsync();
             }
+            else
+            {
+                var hobby = await _context.Hobby.FindAsync(id);
 
-            return hobby;
+                if (hobby == null)
+                {
+                    return NotFound();
+                }
+
+                return new List<Hobby> { hobby };
+            }
         }
 
-        
+      
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHobby(int id, Hobby hobby)
         {
@@ -72,8 +71,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        
-        [HttpPost]
+              [HttpPost]
         public async Task<ActionResult<Hobby>> PostHobby(Hobby hobby)
         {
             _context.Hobby.Add(hobby);
@@ -82,8 +80,7 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetHobby", new { id = hobby.Id }, hobby);
         }
 
-        
-        [HttpDelete("{id}")]
+               [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHobby(int id)
         {
             var hobby = await _context.Hobby.FindAsync(id);

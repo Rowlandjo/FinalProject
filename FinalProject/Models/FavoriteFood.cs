@@ -7,5 +7,6 @@
         public string Cuisine { get; set; }
         public string FlavorProfile { get; set; }
         public int PrepTime { get; set; }
+        public string Healthy { get; set; }
     }
 }

@@ -21,14 +21,18 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FavoriteFood>>> GetFavoriteFood()
-         {
+        {
             return await _context.FavoriteFood.ToListAsync();
         }
 
-        
+        [HttpGet("top5")]
+        public async Task<ActionResult<IEnumerable<FavoriteFood>>> GetFavoriteFoodsAsync()
+        {
+            return await _context.FavoriteFood.Take(5).ToListAsync();
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<FavoriteFood>> GetFavoriteFood(int id)
         {
@@ -42,7 +46,6 @@ namespace FinalProject.Controllers
             return favoriteFood;
         }
 
-        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFavoriteFood(int id, FavoriteFood favoriteFood)
         {
@@ -72,7 +75,6 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        
         [HttpPost]
         public async Task<ActionResult<FavoriteFood>> PostFavoriteFood(FavoriteFood favoriteFood)
         {
@@ -82,7 +84,6 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetFavoriteFood", new { id = favoriteFood.Id }, favoriteFood);
         }
 
-        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFavoriteFood(int id)
         {

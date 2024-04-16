@@ -21,27 +21,28 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-        
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<TeamMember_>>> GetTeamMember_()
+     
+        [HttpGet("{id:int?}")]
+        public async Task<ActionResult<IEnumerable<TeamMember_>>> GetTeamMember_(int? id)
         {
-            return await _context.TeamMember_.ToListAsync();
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<TeamMember_>> GetTeamMember_(int id)
-        {
-            var teamMember_ = await _context.TeamMember_.FindAsync(id);
-
-            if (teamMember_ == null)
+            if (id == null || id == 0)
             {
-                return NotFound();
+                return await _context.TeamMember_.Take(5).ToListAsync();
             }
+            else
+            {
+                var teamMember_ = await _context.TeamMember_.FindAsync(id);
 
-            return teamMember_;
+                if (teamMember_ == null)
+                {
+                    return NotFound();
+                }
+
+                return new List<TeamMember_> { teamMember_ };
+            }
         }
 
-        
+    
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTeamMember_(int id, TeamMember_ teamMember_)
         {
@@ -71,7 +72,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-        
+  
         [HttpPost]
         public async Task<ActionResult<TeamMember_>> PostTeamMember_(TeamMember_ teamMember_)
         {
@@ -81,6 +82,7 @@ namespace FinalProject.Controllers
             return CreatedAtAction("GetTeamMember_", new { id = teamMember_.Id }, teamMember_);
         }
 
+       
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTeamMember_(int id)
         {

@@ -21,28 +21,28 @@ namespace FinalProject.Controllers
             _context = context;
         }
 
-     
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CareerGoals>>> GetCareerGoals()
+      
+        [HttpGet("{id:int?}")]
+        public async Task<ActionResult<IEnumerable<CareerGoals>>> GetCareerGoals(int? id)
         {
-            return await _context.CareerGoals.ToListAsync();
-        }
-
-        
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CareerGoals>> GetCareerGoals(int id)
-        {
-            var careerGoals = await _context.CareerGoals.FindAsync(id);
-
-            if (careerGoals == null)
+            if (id == null || id == 0)
             {
-                return NotFound();
+                return await _context.CareerGoals.Take(5).ToListAsync();
             }
+            else
+            {
+                var careerGoals = await _context.CareerGoals.FindAsync(id);
 
-            return careerGoals;
+                if (careerGoals == null)
+                {
+                    return NotFound();
+                }
+
+                return new List<CareerGoals> { careerGoals };
+            }
         }
 
-     
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCareerGoals(int id, CareerGoals careerGoals)
         {
