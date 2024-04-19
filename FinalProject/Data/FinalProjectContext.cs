@@ -23,15 +23,18 @@ namespace FinalProject.Data
                 );
             builder.Entity<Hobby>().HasData(
                 new Hobby { Id = 1, HobbyName = "Gardening", TypeOfHobby = "Outdoors", CostOfHobby = "Low", TimeWhenHobbyPerformed = "Daytime" }
-                new Hobby { Id = 2, HobbyName = "Gym", TypeOfHobby = "Workout", CostOfHobby = "Low", TimeWhenHobbyPerformed = "Anytime" }
+                new Hobby { Id = 3, HobbyName = "Gym", TypeOfHobby = "Workout", CostOfHobby = "Low", TimeWhenHobbyPerformed = "Anytime" }
+                 new Hobby { Id = 2, HobbyName = "Golf", TypeOfHobby = "Outdoors", CostOfHobby = "Low", TimeWhenHobbyPerformed = "Warm and Sunny" }
                 );
             builder.Entity<CareerGoals>().HasData(
                 new Hobby { Id = 1, GoalName = "Technical Specialist", ResourcesReq = "Schooling, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Getting a Job" }
-                new Hobby { Id = 2, GoalName = "Cybersecurity Analyst", ResourcesReq = "Degree, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Getting a Job" }
-                );
+                new Hobby { Id = 3, GoalName = "Cybersecurity Analyst", ResourcesReq = "Degree, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Getting a Job" }
+               new Hobby { Id = 2, GoalName = "Information Assuarance Technician", ResourcesReq = "Degree, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Succesful Job Interview and Hiring" }
+               );
             builder.Entity<FavoriteFood>().HasData(
                 new Hobby { Id = 1, FoodName = "Pizza", Cuisine = "Italian", FlavorProfile = "Savory", PrepTime = 2, Healthy = "No" }
-                new Hobby { Id = 2, FoodName = "Burger", Cuisine = "American", FlavorProfile = "Tangy", PrepTime = 3, Healthy = "No"}
+                new Hobby { Id = 3, FoodName = "Burger", Cuisine = "American", FlavorProfile = "Tangy", PrepTime = 3, Healthy = "No"}
+                new Hobby { Id = 2, FoodName = "Steak", Cuisine = "American", FlavorProfile = "Smoky", PrepTime = 1, Healthy = "Yes/No"}
                 );
         }                
         
