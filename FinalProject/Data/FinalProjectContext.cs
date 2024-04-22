@@ -47,9 +47,9 @@ namespace FinalProject.Data
     internal class TeamMember
     {
         public int Id { get; set; }
-        public string Fullname { get; set; }
-        public string BirthDate { get; set; }
-        public string CollegeProgram { get; set; }
-        public string YearInProgram { get; set; }
+        public required string Fullname { get; set; }
+        public required string BirthDate { get; set; }
+        public required string CollegeProgram { get; set; }
+        public required string YearInProgram { get; set; }
     }
 }
