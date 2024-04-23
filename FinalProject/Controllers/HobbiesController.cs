@@ -72,7 +72,7 @@ namespace FinalProject.Controllers
             return NoContent();
         }
 
-              [HttpPost]
+              [HttpPost("{id}")]
         public async Task<ActionResult<Hobby>> PostHobby(Hobby hobby)
         {
             _context.Hobby.Add(hobby);

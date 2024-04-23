@@ -74,7 +74,7 @@ namespace FinalProject.Controllers
         }
 
        
-        [HttpPost]
+        [HttpPost("{id}")]
         public async Task<ActionResult<CareerGoals>> PostCareerGoals(CareerGoals careerGoals)
         {
             _context.CareerGoals.Add(careerGoals);

@@ -73,7 +73,7 @@ namespace FinalProject.Controllers
         }
 
   
-        [HttpPost]
+        [HttpPost("{id}")]
         public async Task<ActionResult<TeamMember_>> PostTeamMember_(TeamMember_ teamMember_)
         {
             _context.TeamMember_.Add(teamMember_);
