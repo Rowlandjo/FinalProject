@@ -63,7 +63,7 @@ namespace FinalProject.Data
         public required string CostOfHobby { get; set; }
         public required string TimeWhenHobbyPerformed { get; set; }
     }
-    internal class CarrerGoals
+    internal class CareerGoals
     {
         public int Id { get; set; }
         public required string GoalName { get; set; }
