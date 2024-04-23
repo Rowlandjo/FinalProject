@@ -55,30 +55,30 @@ namespace FinalProject.Data
         public required string CollegeProgram { get; set; }
         public required string YearInProgram { get; set; }
     }
-    internal class Hobby
+  //  internal class Hobby
     {
-        public int Id { get; set; }
-        public required string HobbyName { get; set; }
-        public required string TypeOfHobby { get; set; }
-        public required string CostOfHobby { get; set; }
-        public required string TimeWhenHobbyPerformed { get; set; }
+      //  public int Id { get; set; }
+        //public required string HobbyName { get; set; }
+        //public required string TypeOfHobby { get; set; }
+        //public required string CostOfHobby { get; set; }
+       // public required string TimeWhenHobbyPerformed { get; set; }
     }
-    internal class CareerGoals
+   // internal class CareerGoals
     {
-        public int Id { get; set; }
-        public required string GoalName { get; set; }
-        public required string ResourcesReq { get; set; }
-        public required string SupportNeeded { get; set; }
-        public required string SuccessIndicator { get; set; }
+    //    public int Id { get; set; }
+   //     public required string GoalName { get; set; }
+     //   public required string ResourcesReq { get; set; }
+     //   public required string SupportNeeded { get; set; }
+      //  public required string SuccessIndicator { get; set; }
     }
-    internal class FavoriteFood
+  //  internal class FavoriteFood
     {
-        public int Id { get; set; }
-        public required string FoodName { get; set; }
-        public required string Cuisine { get; set; }
-        public required string FlavorProfile { get; set; }
-        public required string PrepTime { get; set; }
-        public required string Healthy { get; set; }
+    //    public int Id { get; set; }
+     //   public required string FoodName { get; set; }
+     //   public required string Cuisine { get; set; }
+     //   public required string FlavorProfile { get; set; }
+     //   public required string PrepTime { get; set; }
+     //   public required string Healthy { get; set; }
         
     }
 }
