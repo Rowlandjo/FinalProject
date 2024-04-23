@@ -34,10 +34,10 @@ namespace FinalProject.Data
                 new CareerGoals { Id = 3, GoalName = "Cybersecurity Analyst", ResourcesReq = "Degree, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Getting a Job," },
                new CareerGoals { Id = 2, GoalName = "Information Assuarance Technician", ResourcesReq = "Degree, Certificates, Experience", SupportNeeded = "Yes", SuccessIndicator = "Succesful Job Interview and Hiring," }
                );
-            builder.Entity<FavoriteFood>().HasData(
-                new Hobby { Id = 1, FoodName = "Pizza", Cuisine = "Italian", FlavorProfile = "Savory", PrepTime = 2, Healthy = "No," },
-                new Hobby { Id = 3, FoodName = "Burger", Cuisine = "American", FlavorProfile = "Tangy", PrepTime = 3, Healthy = "No,"},
-                new Hobby { Id = 2, FoodName = "Steak", Cuisine = "American", FlavorProfile = "Smoky", PrepTime = 1, Healthy = "Yes/No,"}
+            _ = builder.Entity<FavoriteFood>().HasData(
+                new FavoriteFood { Id = 1, FoodName = "Pizza", Cuisine = "Italian", FlavorProfile = "Savory", PrepTime = "2", Healthy = "No," },
+                new FavoriteFood { Id = 3, FoodName = "Burger", Cuisine = "American", FlavorProfile = "Tangy", PrepTime = "3", Healthy = "No," },
+                new FavoriteFood { Id = 2, FoodName = "Steak", Cuisine = "American", FlavorProfile = "Smoky", PrepTime = "1", Healthy = "Yes/No," }
                 );
         }                
         
