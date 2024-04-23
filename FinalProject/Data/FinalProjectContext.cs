@@ -72,7 +72,7 @@ namespace FinalProject.Data
     internal class FavoriteFood
     {
         public int Id { get; set; }
-        public required string FoodName
+        public required string FoodName { get; set; }
         public required string Cuisine { get; set; }
         public required string FlavorProfile { get; set; }
         public required string PrepTime { get; set; }
