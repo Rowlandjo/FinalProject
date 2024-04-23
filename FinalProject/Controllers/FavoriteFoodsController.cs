@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FinalProject.Data;
 using FinalProject.Models;
+using FavoriteFood = FinalProject.Models.FavoriteFood;
 
 namespace FinalProject.Controllers
 {

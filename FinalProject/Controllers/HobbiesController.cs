@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FinalProject.Data;
 using FinalProject.Models;
+using Hobby = FinalProject.Models.Hobby;
 
 namespace FinalProject.Controllers
 {
